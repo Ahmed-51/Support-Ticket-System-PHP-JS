@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS support CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE support;
+
+CREATE TABLE tickets (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  message TEXT NOT NULL,
+  status ENUM('open','closed') NOT NULL DEFAULT 'open',
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
